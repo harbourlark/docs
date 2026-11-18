@@ -79,10 +79,13 @@ jobs:
       # No repository checkout or build code runs with deployment permissions.
       - name: Reject an obsolete main revision
         id: current
+        timeout-minutes: 1
         env:
           EXPECTED_SHA: ${{ github.sha }}
+          GIT_TERMINAL_PROMPT: '0'
+        shell: bash
         run: |
-          current_sha="$(curl --fail --silent --show-error --retry 3 --max-time 30 https://api.github.com/repos/sieblyio/docs/commits/main | jq -er '.sha')"
+          current_sha="$(git ls-remote --exit-code https://github.com/sieblyio/docs.git refs/heads/main | cut -f1)"
           if [ "$current_sha" = "$EXPECTED_SHA" ]; then
             echo 'deploy=true' >> "$GITHUB_OUTPUT"
           else
