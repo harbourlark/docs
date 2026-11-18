@@ -11,6 +11,6 @@
     "@siebly/hyperliquid-api": "latest"
   },
   "devDependencies": {
-    "vite": "5.4.21"
+    "vite": "6.4.6"
   }
 }

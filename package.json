@@ -31,9 +31,14 @@
     "typedoc": "0.28.20",
     "typedoc-plugin-markdown": "4.14.1",
     "typescript": "6.0.3",
-    "vite": "5.4.21",
+    "vite": "6.4.6",
     "vitepress": "1.6.4",
     "ws": "8.21.1"
+  },
+  "overrides": {
+    "vitepress": {
+      "vite": "$vite"
+    }
   },
   "engines": {
     "node": ">=22"

@@ -49,7 +49,7 @@ export async function generateCompatibility(ctx,root) {
     if(c.observation)lines.push(`The server route received BTC price **${safe(c.observation.price)}** at ${safe(c.observation.observedAt)}.`,'');
     if(t==='browser-configured'&&c.status==='passed'){
       const recipe=await readFile(path.join(projectRoot,'compatibility/browser-config',ctx.id+'.mjs'),'utf8');
-      lines.push('### Vite configuration','','Install the SDK and EventEmitter polyfill:','','```sh',`npm install ${ctx.pkg.name} events@3.3.0`,'```','','Save this as `vite.config.mjs` at the application root:','','```js',recipe.trim(),'```','','This supplies EventEmitter'+(ctx.id==='binance'?" and selects Binance's browser signing module":'')+'. Tested with Vite 5.4.21 and an npm installation.','');
+      lines.push('### Vite configuration','','Install the SDK and EventEmitter polyfill:','','```sh',`npm install ${ctx.pkg.name} events@3.3.0`,'```','','Save this as `vite.config.mjs` at the application root:','','```js',recipe.trim(),'```','','This supplies EventEmitter'+(ctx.id==='binance'?" and selects Binance's browser signing module":'')+'. Tested with Vite 6.4.6 and an npm installation.','');
     }
     if(t==='vite')lines.push('Bundling only; see the browser results for runtime checks.','');
     if(t===setupTarget) {
