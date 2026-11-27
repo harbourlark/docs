@@ -39,7 +39,7 @@ Set `HYPERLIQUID_ACCOUNT_ADDRESS` and `HYPERLIQUID_ORDER_ID` to the account and 
 
 `unknownOid` means this query found no order. Confirm the account, network and identifier, then check order and fill history before resubmitting.
 
-[getOrderStatus reference](/api/classes/RestClient#getorderstatus) Â· [Order result handling](/guides/errors#order-results)
+[getOrderStatus reference](/api/classes/RestClient#getorderstatus) · [Order result handling](/guides/errors#order-results)
 
 ## Rate limits
 
